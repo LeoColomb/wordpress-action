@@ -1,4 +1,4 @@
-FROM composer
+FROM composer:1
 
 LABEL version="1.0.0"
 LABEL repository="https://github.com/LeoColomb/wordpress-action"
