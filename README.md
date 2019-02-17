@@ -20,7 +20,7 @@ action "Tag" {
 
 action "Publish" {
   needs = "Tag"
-  uses = "LeoColomb/wordpress-action@master"
+  uses = "leocolomb/wordpress-action@master"
   env = {
     WORDPRESS_PLUGIN = "my-awesome-plugin"
   }
@@ -43,7 +43,7 @@ To authenticate with, and publish to the WordPress Plugin Directory:
 
 ```hcl
 action "Publish" {
-  uses = "LeoColomb/wordpress-action@master"
+  uses = "leocolomb/wordpress-action@master"
   env = {
     WORDPRESS_PLUGIN = "my-awesome-plugin"
   }

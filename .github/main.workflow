@@ -21,13 +21,13 @@ action "Docker Lint" {
 action "Build" {
   needs = ["Shell Lint", "Test", "Docker Lint"]
   uses = "actions/docker/cli@master"
-  args = "build -t wordpress ."
+  args = "build -t wordpress-action ."
 }
 
 action "Docker Tag" {
   needs = ["Build"]
   uses = "actions/docker/tag@master"
-  args = "wordpress LeoColomb/wordpress-action --no-latest"
+  args = "wordpress-action leocolomb/wordpress-action --no-latest"
 }
 
 action "Publish Filter" {
@@ -45,5 +45,5 @@ action "Docker Login" {
 action "Docker Publish" {
   needs = ["Docker Tag", "Docker Login"]
   uses = "actions/docker/cli@master"
-  args = "push LeoColomb/wordpress-action"
+  args = "push leocolomb/wordpress-action"
 }
